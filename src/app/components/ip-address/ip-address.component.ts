@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {IpAddressService} from '../../services/ip-address.service';
 
 @Component({
   selector: 'app-ip-address',
@@ -9,11 +9,13 @@ import { HttpClient } from '@angular/common/http';
 export class IpAddressComponent implements OnInit {
   ip = '';
 
-  constructor(private http: HttpClient) {
+  constructor(private ipAddressService: IpAddressService) {
   }
 
   ngOnInit() {
-    this.http.get('http://api.ipify.org/?format=json')
-      .subscribe((res: any) => this.ip = res.ip);
+    this.ipAddressService.fetchIp()
+      .subscribe(res => {
+        this.ip = res.ip;
+      });
   }
 }
