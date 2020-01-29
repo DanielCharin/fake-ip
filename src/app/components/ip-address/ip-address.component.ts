@@ -13,7 +13,7 @@ export class IpAddressComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ipAddressService.fetchIp()
+    this.ipAddressService.getIPFromIpify()
       .subscribe(res => {
         this.ip = res.ip;
       });

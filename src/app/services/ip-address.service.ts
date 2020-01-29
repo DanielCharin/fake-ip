@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {delay} from 'rxjs/operators';
 
-export interface Ip {
+class IpifyRes {
   ip: string;
 }
 
@@ -14,8 +13,7 @@ export class IpAddressService {
 
   constructor(private http: HttpClient) {}
 
-  fetchIp(): Observable<Ip> {
-    return this.http.get<Ip>('http://api.ipify.org/?format=json')
-      .pipe(delay(500));
+  getIPFromIpify(): Observable<IpifyRes> {
+    return this.http.get<IpifyRes>('http://api.ipify.org/?format=json');
   }
 }
