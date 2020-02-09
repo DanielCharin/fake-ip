@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {GeolocationService} from '../../services/geolocation.service';
 
 @Component({
@@ -6,11 +6,14 @@ import {GeolocationService} from '../../services/geolocation.service';
   templateUrl: './geolocation.component.html',
   styleUrls: ['./geolocation.component.scss']
 })
-export class GeolocationComponent implements OnInit {
-
+export class GeolocationComponent {
+  lat: number;
   constructor(private geolocationService: GeolocationService) {}
 
-  ngOnInit(): void {
-    this.geolocationService.getGeolocation();
+  setGeo(position) {
+    console.log('works');
+    position.then((res) => {
+      this.lat = res.coords.latitude;
+    });
   }
 }
