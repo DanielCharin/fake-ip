@@ -9,7 +9,6 @@ export class WebrtcComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

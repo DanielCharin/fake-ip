@@ -1,1 +1,5 @@
 https://www.itsolutionstuff.com/post/how-to-get-client-ip-address-in-angularexample.html
+https://www.udemy.com/course/angular-complete-guide/
+https://developer.mozilla.org/ru/docs/Web/API/Navigator
+https://medium.com/@rossbulat/typescript-generics-explained-15c6493b510f
+https://www.tutorialspoint.com/html5/geolocation_getcurrentposition.htm
