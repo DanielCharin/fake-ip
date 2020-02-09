@@ -8,11 +8,16 @@ import {GeolocationService} from '../../services/geolocation.service';
 })
 export class GeolocationComponent implements OnInit {
   lat: number;
+  lon: number;
   constructor(private geolocationService: GeolocationService) {}
 
   ngOnInit(): void {
     this.geolocationService.getGeolication().subscribe(pos => {
       this.lat = pos.coords.latitude;
-    });
+      this.lon = pos.coords.longitude;
+    },
+      err => {
+        console.log(err);
+      });
   }
 }
