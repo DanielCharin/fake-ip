@@ -4,3 +4,8 @@ https://developer.mozilla.org/ru/docs/Web/API/Navigator
 https://medium.com/@rossbulat/typescript-generics-explained-15c6493b510f
 https://www.tutorialspoint.com/html5/geolocation_getcurrentposition.htm
 https://gist.github.com/sasha7/0c32f3686eb49d44ccc8?fbclid=IwAR3h-0EGRMVcwqVnU9yWfv59x7z7E8bE5vw50qW3xD3p7kTa1DjfC3ILY8c
+https://medium.com/angular-in-depth/google-maps-is-now-an-angular-component-821ec61d2a0
+https://timdeschryver.dev/blog/google-maps-as-an-angular-component
+
+https://w3c.github.io/geolocation-api/
+

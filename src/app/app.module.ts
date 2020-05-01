@@ -6,6 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { IpAddressComponent } from './components/ip-address/ip-address.component';
 import { WebrtcComponent } from './components/webrtc/webrtc.component';
 import {GeolocationComponent} from './components/geolocation/geolocation.component';
+import {GoogleMapsModule} from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {GeolocationComponent} from './components/geolocation/geolocation.compone
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
