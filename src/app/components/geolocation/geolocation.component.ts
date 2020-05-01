@@ -2,15 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {GeolocationService} from '../../services/geolocation.service';
 
 interface Marker {
-  position: Position;
+  position: google.maps.LatLngLiteral;
   label?: google.maps.MarkerLabel;
   title?: string;
   options?: google.maps.MarkerOptions;
-}
-
-interface Position {
-  lat: number;
-  lng: number;
 }
 
 @Component({
@@ -43,12 +38,18 @@ export class GeolocationComponent implements OnInit {
 
   addMarker(): void {
      this.marker = {
-        position: {lat: this.lat, lng: this.lon},
+        position: {
+          lat: this.lat,
+          lng: this.lon
+        },
         label: {
           color: 'red',
           text: 'Marker label',
         },
         title: 'Marker title ',
-        options: { animation: google.maps.Animation.DROP }};
+        options: {
+          animation: google.maps.Animation.DROP
+        }
+     };
   }
 }
