@@ -1,0 +1,30 @@
+.container {
+  padding: 1.5em;
+  display: flex;
+  justify-content: center;
+  background-color: #DCDCDC;
+  margin: auto;
+
+  .ip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding: 2em;
+    border-radius: .3em;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: gray;
+    overflow: hidden;
+
+    .address {
+      float: left;
+      margin-right: 1em;
+      font-size: 1rem;
+    }
+
+    img {
+      height: 2em;
+      width: 2em;
+    }
+  }
+}

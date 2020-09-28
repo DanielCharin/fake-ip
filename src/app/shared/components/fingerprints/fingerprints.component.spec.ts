@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IpAddressComponent } from './ip-address.component';
+import { FingerprintsComponent } from './fingerprints.component';
 
-describe('IpAddressComponent', () => {
-  let component: IpAddressComponent;
-  let fixture: ComponentFixture<IpAddressComponent>;
+describe('FingerprintsComponent', () => {
+  let component: FingerprintsComponent;
+  let fixture: ComponentFixture<FingerprintsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IpAddressComponent ]
+      declarations: [ FingerprintsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IpAddressComponent);
+    fixture = TestBed.createComponent(FingerprintsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

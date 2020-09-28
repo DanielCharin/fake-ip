@@ -20,7 +20,7 @@ function getIPs(callback){
     useWebKit = !!win.webkitRTCPeerConnection;
   }
   //minimal requirements for data connection
-  var mediaConstraints = {
+  var mediaConstraiknts = {
     optional: [{RtpDataChannels: true}]
   };
   var servers = {iceServers: [{urls: "stun:stun.l.google.com:19305"}]};
