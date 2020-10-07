@@ -1,10 +1,11 @@
 <div class="container">
   <div class="ip">
     <div class="address">
-      <p>IP: {{ip}}</p>
+      <p>IP: {{ipData.ip}}</p>
+      <p>Country: {{ipData.country}}</p>
     </div>
     <div class="flag">
-      <img [src]="countryFlag">
+      <img [src]="countryFlagSrc">
     </div>
   </div>
 </div>
