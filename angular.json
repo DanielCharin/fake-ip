@@ -30,7 +30,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "country-flags-svg",
+              "moment-timezone"
+            ]
           },
           "configurations": {
             "production": {

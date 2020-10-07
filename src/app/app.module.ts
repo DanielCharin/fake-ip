@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
 import { WebrtcComponent } from './fingerprinting/components/webrtc/webrtc.component';
 import {GeolocationComponent} from './fingerprinting/components/geolocation/geolocation.component';
 import {GoogleMapsModule} from '@angular/google-maps';
@@ -13,6 +13,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { FingerprintsComponent } from './shared/components/fingerprints/fingerprints.component';
 import { MainIpComponent } from './fingerprinting/components/main-ip/main-ip.component';
 import { DataComponent } from './shared/components/data/data.component';
+import { TimezoneComponent } from './fingerprinting/components/timezone/timezone.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { DataComponent } from './shared/components/data/data.component';
     HeaderComponent,
     FingerprintsComponent,
     MainIpComponent,
-    DataComponent
+    DataComponent,
+    TimezoneComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    HttpClientJsonpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

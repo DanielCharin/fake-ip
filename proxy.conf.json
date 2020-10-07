@@ -1,0 +1,22 @@
+{
+  "/v1/ip/": {
+    "target":  {
+      "host": "get.geojs.io",
+      "protocol": "https:",
+      "port": 443
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  },
+  "/myip.json" : {
+    "target":  {
+      "host": "lumtest.com",
+      "protocol": "https:",
+      "port": 443
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "info"
+  }
+}

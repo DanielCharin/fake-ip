@@ -9,3 +9,13 @@ https://timdeschryver.dev/blog/google-maps-as-an-angular-component
 
 https://w3c.github.io/geolocation-api/
 
+https://wiki.scn.sap.com/wiki/display/NWTech/Difference+or+use+of+user+timezone+and+system+timezone
+
+TCP/IP
+https://www.hacksparrow.com/nodejs/tcp-socket-programming-in-node-js.html
+
+
+PROBLEMS:
+WebRTC...
+Ipify and get.geojs.io requests didn't pass beacuse of CORS erros. Solution was to use JSONP requests.
+Had to add country-flags-svg to angular.json allowedCommonJsDependencies.

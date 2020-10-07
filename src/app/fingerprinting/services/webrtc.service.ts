@@ -21,7 +21,6 @@ export class WebrtcService {
       this.performPeerConnection();
 
       const int = setInterval(() => {
-        console.log('IP is: ' + this.publicIP);
         if (this.publicIP !== '') {
           resolve(this.publicIP);
           clearInterval(int);
@@ -64,7 +63,6 @@ export class WebrtcService {
     peerConnection.createDataChannel('');
 
     peerConnection.createOffer().then(offer => {
-      console.log('Create offer');
       peerConnection.setLocalDescription(new RTCSessionDescription(offer));
     });
   }
@@ -74,7 +72,6 @@ export class WebrtcService {
     lines.forEach(line => {
       const exp = new RegExp('(\\d{1,3}\\.){3}(\\d{1,3})');
       if (line.startsWith('a=candidate:') && line.match(exp)) {
-        // console.log(line.match(exp)[0]);
         this.publicIP = line.match(exp)[0];
       }
     });
