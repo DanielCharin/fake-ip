@@ -19,6 +19,7 @@ export class GeolocationComponent implements OnInit {
   marker = {} as Marker;
   lat: number;
   lon: number;
+  accuracy: number;
 
   constructor(private geolocationService: GeolocationService) {}
 
@@ -26,6 +27,8 @@ export class GeolocationComponent implements OnInit {
     this.geolocationService.getGeolication().subscribe(pos => {
       this.lat = pos.coords.latitude;
       this.lon = pos.coords.longitude;
+      this.accuracy = pos.coords.accuracy;
+
       this.center = {
         lat: pos.coords.latitude, lng: pos.coords.longitude
       };
@@ -42,11 +45,6 @@ export class GeolocationComponent implements OnInit {
           lat: this.lat,
           lng: this.lon
         },
-        label: {
-          color: 'red',
-          text: 'Marker label',
-        },
-        title: 'Marker title ',
         options: {
           animation: google.maps.Animation.DROP
         }
