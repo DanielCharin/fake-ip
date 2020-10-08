@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {GeolocationService} from '../../services/geolocation.service';
 
 interface Marker {
@@ -20,6 +20,10 @@ export class GeolocationComponent implements OnInit {
   lat: number;
   lon: number;
   accuracy: number;
+  address: string;
+
+  @Output()
+  whenGeoApiLocation: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();
 
   constructor(private geolocationService: GeolocationService) {}
 
@@ -28,6 +32,7 @@ export class GeolocationComponent implements OnInit {
       this.lat = pos.coords.latitude;
       this.lon = pos.coords.longitude;
       this.accuracy = pos.coords.accuracy;
+      this.whenGeoApiLocation.emit({lat: this.lat, lng: this.lon});
 
       this.center = {
         lat: pos.coords.latitude, lng: pos.coords.longitude

@@ -1,23 +1,22 @@
 <div class="container">
-  <div class="ip geolocation">
-    <app-geolocation></app-geolocation>
+  <div class="ip main-ip">
+    <app-main-ip
+    (whenIP)="updateIP($event)"
+    (whenIpLocation)="updateIpLocation($event)">
+    </app-main-ip>
   </div>
   <div class="ip web-rtc">
-    <app-webrtc></app-webrtc>
+    <app-webrtc
+    (whenWebRTCIP)="updateWebRTCIP($event)"
+    [IPsMatch]="IPsMatch">
+    </app-webrtc>
   </div>
   <div class="ip timezone">
     <app-timezone></app-timezone>
   </div>
-  <div class="ip">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies posuere mollis.</p>
-  </div>
-  <div class="ip span-2">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies posuere mollis.</p>
-  </div>
-  <div class="ip">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies posuere mollis.</p>
-  </div>
-  <div class="ip">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultricies posuere mollis.</p>
+  <div class="ip geo">
+    <app-geolocation
+      (whenGeoApiLocation)="updateGeoApiLocation($event)">
+    </app-geolocation>
   </div>
 </div>
