@@ -1,8 +1,16 @@
-<div>
-  <h2>Timezone</h2>
-
-  <div class="data">
-    <p>Local: {{localTZ}}</p>
-    <p>System: {{systemTZ}}</p>
+<div class="data">
+  <div class="compared-data">
+    <div class="local">
+      <h3>Local timezone</h3>
+      <p>{{localTZ}}</p>
+    </div>
+    <div class="system">
+      <h3>System timezone</h3>
+      <p>{{systemTZ}}</p>
+    </div>
+  </div>
+  <div class="match" *ngIf="!timezonesMatch && timezonesMatch != undefined">
+    <img src="../../../../assets/warn.png" height="80" width="80"/><br>
+    <pre>Timezone mismatch</pre>
   </div>
 </div>

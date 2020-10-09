@@ -1,33 +1,20 @@
-/*
-.container {
-  padding: 1.5em;
+.country {
   display: flex;
-  justify-content: center;
-  background-color: #DCDCDC;
-  margin: auto;
-
-  .ip {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    padding: 2em;
-    border-radius: .3em;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
-    background-color: gray;
-    overflow: hidden;
-
-    .address {
-      float: left;
-      margin-right: 1em;
-      font-size: 1rem;
+  margin-top: -1em;
+  .country-name {
+    float: left;
+    margin-right: 1em;
+    font-size: 1rem;
     }
 
-
+  .country-flag {
+    margin-top: 0.5rem;
+    float: right;
+    img {
+      height: 2em;
+      width: 2em;
+    }
   }
 }
-*/
-img {
-  height: 2em;
-  width: 2em;
-}
+
+

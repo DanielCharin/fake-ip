@@ -1,15 +1,38 @@
 .container {
-  padding: 1.5em;
+  padding: 1em;
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
-  background-color: #DCDCDC;
+  background-color: #FFFFFF;
 
   .ip {
     padding: 2em;
     border-radius: .3em;
-    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.1);
-    background-color: #FFFFFF;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0.3,0);
+    background-color: #DCDCDC;
+
+    .data {
+      display: flex;
+
+      .compared-data {
+        float: left;
+        width: 50%;
+      }
+
+      .match {
+        float: right;
+        margin-left: 40%;
+        width: 30%;
+        text-align: center;
+
+        img {
+          margin-bottom: -15%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
   }
 }
 

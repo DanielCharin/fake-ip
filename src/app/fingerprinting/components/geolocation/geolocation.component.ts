@@ -19,7 +19,6 @@ export class GeolocationComponent implements OnInit {
   marker = {} as Marker;
   lat: number;
   lon: number;
-  accuracy: number;
   address: string;
 
   @Output()
@@ -31,7 +30,6 @@ export class GeolocationComponent implements OnInit {
     this.geolocationService.getGeolication().subscribe(pos => {
       this.lat = pos.coords.latitude;
       this.lon = pos.coords.longitude;
-      this.accuracy = pos.coords.accuracy;
       this.whenGeoApiLocation.emit({lat: this.lat, lng: this.lon});
 
       this.center = {

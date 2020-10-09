@@ -6,15 +6,39 @@
     </app-main-ip>
   </div>
   <div class="ip web-rtc">
-    <app-webrtc
-    (whenWebRTCIP)="updateWebRTCIP($event)"
-    [IPsMatch]="IPsMatch">
-    </app-webrtc>
+    <div class="data">
+      <div class="compared-data">
+        <app-webrtc
+          (whenWebRTCIP)="updateWebRTCIP($event)"
+          [IPsMatch]="IPsMatch">
+        </app-webrtc>
+      </div>
+      <div class="match" *ngIf="!IPsMatch && IPsMatch != undefined">
+        <img src="../../../../assets/warn.png" height="80" width="80"/><br>
+        <pre>WebRTC public IP mismatch</pre>
+      </div>
+    </div>
+
   </div>
   <div class="ip timezone">
     <app-timezone></app-timezone>
   </div>
   <div class="ip geo">
+    <div class="data">
+      <div class="compared-data">
+        <h3>Location by IP address</h3>
+        <div class="cooridnates" *ngIf="ipLocation != undefined">
+          <p>Lat: {{this.ipLocation.lat}}</p>
+          <p>Lng: {{this.ipLocation.lng}}</p>
+        </div>
+      </div>
+      <div class="match" *ngIf="!locationsMatch && locationsMatch != undefined">
+        <img src="../../../../assets/warn.png" height="80" width="80"/><br>
+        <pre>Geolocation mismatch</pre>
+      </div>
+    </div>
+
+
     <app-geolocation
       (whenGeoApiLocation)="updateGeoApiLocation($event)">
     </app-geolocation>

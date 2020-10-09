@@ -9,7 +9,7 @@ import {IPData} from '../../../model/IPData';
   styleUrls: ['./main-ip.component.scss']
 })
 export class MainIpComponent implements OnInit {
-  ipData: IPData = {ip: 'n/a', country: 'n/a', country_code3: 'n/a'};
+  ipData: IPData = {ip: 'n/a', country: 'n/a', country_code3: 'n/a', latitude: 'n/a'};
   countryFlagSrc: '';
 
   @Output()
@@ -25,7 +25,9 @@ export class MainIpComponent implements OnInit {
       this.ipData = new IPData(next);
       this.countryFlagSrc = findFlagUrlByIso3Code(this.ipData.country_code3);
       this.whenIP.emit(next.ip);
-      this.whenIpLocation.emit({lat: parseInt(this.ipData.latitude, 10), lng: parseInt(this.ipData.longitude, 10)});
+      this.whenIpLocation.emit({
+        lat: parseFloat(parseFloat(this.ipData.latitude).toFixed(2)),
+        lng: parseFloat(parseFloat(this.ipData.longitude).toFixed(2))});
     });
   }
 }

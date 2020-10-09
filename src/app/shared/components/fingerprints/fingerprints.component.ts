@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-fingerprints',
@@ -21,23 +21,32 @@ export class FingerprintsComponent implements OnInit {
     this.performGeoMismatchCheck();
   }
 
+  // TODO: Unit test
   performIpMismatchCheck() {
     const int = setInterval(() => {
       if (this.ip !== '' && this.webRTCIP !== '') {
         this.ip.localeCompare(this.webRTCIP) === 0 ?  this.IPsMatch = true : this.IPsMatch = false;
-        this.IPsMatch = true;
         clearInterval(int);
       }
     }, 1000);
   }
 
+  // TODO: Unit test
   performGeoMismatchCheck() {
     const int = setInterval(() => {
-      console.log(this.geoApiLocation);
-      console.log(this.ipLocation);
       if (this.ipLocation != null && this.geoApiLocation != null) {
-        this.ip.localeCompare(this.webRTCIP) === 0 ?  this.IPsMatch = true : this.IPsMatch = false;
-        this.IPsMatch = true;
+        if (this.ipLocation.lng > this.geoApiLocation.lng) {
+          this.ipLocation.lng - this.geoApiLocation.lng < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+        } else {
+          this.geoApiLocation.lng - this.ipLocation.lng < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+        }
+
+        if (this.ipLocation.lat > this.geoApiLocation.lat) {
+          this.ipLocation.lat - this.geoApiLocation.lat < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+        } else {
+          this.geoApiLocation.lat - this.ipLocation.lat < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+        }
+
         clearInterval(int);
       }
     }, 1000);

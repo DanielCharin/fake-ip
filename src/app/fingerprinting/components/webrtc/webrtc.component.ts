@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {WebrtcService} from '../../services/webrtc.service';
 
 @Component({
@@ -6,7 +6,7 @@ import {WebrtcService} from '../../services/webrtc.service';
   templateUrl: './webrtc.component.html',
   styleUrls: ['./webrtc.component.scss']
 })
-export class WebrtcComponent implements OnInit, OnChanges {
+export class WebrtcComponent implements OnInit {
   publicIP = '';
   constructor(private webrtcService: WebrtcService) {}
 
@@ -15,15 +15,10 @@ export class WebrtcComponent implements OnInit, OnChanges {
   @Input()
   IPsMatch: boolean;
 
-
   ngOnInit(): void {
     this.webrtcService.getPublicIP().then(ip => {
       this.publicIP = ip;
       this.whenWebRTCIP.emit(ip);
     });
-  }
-
-  ngOnChanges() {
-    console.log('IPS MATCH (FROM WEBRTC!)' + this.IPsMatch);
   }
 }

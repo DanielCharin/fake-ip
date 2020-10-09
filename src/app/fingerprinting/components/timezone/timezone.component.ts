@@ -11,6 +11,7 @@ import * as moment from 'moment-timezone';
 export class TimezoneComponent implements OnInit {
   localTZ: string;
   systemTZ: string;
+  timezonesMatch: boolean;
 
   constructor(private ipAddressService: IpAddressService) { }
 
@@ -23,7 +24,7 @@ export class TimezoneComponent implements OnInit {
     });
   }
 
-  // TODO: Unit tets
+  // TODO: Unit test
   setTzValues(system: string, local: string): void {
     let systemOffsetInHours;
     let localOffsetInHours;
@@ -38,5 +39,10 @@ export class TimezoneComponent implements OnInit {
 
     this.systemTZ = system + ' ' + systemOffsetInHours;
     this.localTZ = local + ' ' + localOffsetInHours;
+    this.performTimezoneMismatchCheck();
+  }
+
+  performTimezoneMismatchCheck() {
+    this.timezonesMatch = this.systemTZ.localeCompare(this.localTZ) === 0;
   }
 }
