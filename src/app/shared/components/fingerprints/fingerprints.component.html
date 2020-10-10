@@ -18,7 +18,6 @@
         <pre>WebRTC public IP mismatch</pre>
       </div>
     </div>
-
   </div>
   <div class="ip timezone">
     <app-timezone></app-timezone>
@@ -32,13 +31,17 @@
           <p>Lng: {{this.ipLocation.lng}}</p>
         </div>
       </div>
-      <div class="match" *ngIf="!locationsMatch && locationsMatch != undefined">
-        <img src="../../../../assets/warn.png" height="80" width="80"/><br>
-        <pre>Geolocation mismatch</pre>
+      <div class="match" *ngIf="locationsMatch != undefined">
+        <div class="fail" *ngIf="!locationsMatch; else success">
+          <img src="../../../../assets/warn.png" height="80" width="80"/><br>
+          <pre>Location mismatch</pre>
+        </div>
+        <ng-template #success>
+          <img src="../../../../assets/check.png" height="80" width="65"/><br>
+          <pre>Location match</pre>
+        </ng-template>
       </div>
     </div>
-
-
     <app-geolocation
       (whenGeoApiLocation)="updateGeoApiLocation($event)">
     </app-geolocation>

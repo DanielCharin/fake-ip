@@ -1,6 +1,12 @@
 <div>
   <h3>WebRTC</h3>
-  <div class="data">
-    <p>Public IP: {{publicIP}}</p>
+  <p>Public IP: {{publicIP}}</p>
+  <div class="country">
+    <div class="country-name">
+      <p>Country: {{country}}</p>
+    </div>
+    <div class="country-flag">
+      <img [src]="countryFlagSrc">
+    </div>
   </div>
 </div>

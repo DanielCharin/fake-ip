@@ -11,4 +11,8 @@ export class IpAddressService {
   getIPData(): Observable<any> {
     return this.http.jsonp('https://get.geojs.io/v1/ip/geo.js', 'callback');
   }
+
+  getCountryByIP(ip: string): Observable<any> {
+    return this.http.jsonp('https://get.geojs.io/v1/ip/country/' + ip + '.js', 'callback');
+  }
 }

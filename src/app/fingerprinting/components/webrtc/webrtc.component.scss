@@ -1,0 +1,18 @@
+.country {
+  display: flex;
+  margin-top: -1em;
+  .country-name {
+    float: left;
+    margin-right: 1em;
+    font-size: 1rem;
+  }
+
+  .country-flag {
+    margin-top: 0.5rem;
+    float: right;
+    img {
+      height: 2em;
+      width: 2em;
+    }
+  }
+}

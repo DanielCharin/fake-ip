@@ -28,8 +28,8 @@ export class GeolocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.geolocationService.getGeolication().subscribe(pos => {
-      this.lat = pos.coords.latitude;
-      this.lon = pos.coords.longitude;
+      this.lat = parseFloat(pos.coords.latitude.toFixed(2));
+      this.lon = parseFloat(pos.coords.longitude.toFixed(2));
       this.whenGeoApiLocation.emit({lat: this.lat, lng: this.lon});
 
       this.center = {
