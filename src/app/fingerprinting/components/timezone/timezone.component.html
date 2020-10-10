@@ -9,8 +9,14 @@
       <p>{{systemTZ}}</p>
     </div>
   </div>
-  <div class="match" *ngIf="!timezonesMatch && timezonesMatch != undefined">
-    <img src="../../../../assets/warn.png" height="80" width="80"/><br>
-    <pre>Timezone mismatch</pre>
+  <div class="match" *ngIf="timezonesMatch != undefined">
+    <div class="fail" *ngIf="!timezonesMatch; else success">
+      <img src="../../../../assets/warn.png" height="80" width="80"/><br>
+      <pre>Timezone mismatch</pre>
+    </div>
+    <ng-template #success>
+      <img src="../../../../assets/check.png" height="80" width="65"/><br>
+      <pre>Timezone match</pre>
+    </ng-template>
   </div>
 </div>
