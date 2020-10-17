@@ -22,7 +22,7 @@ export class FingerprintsComponent implements OnInit {
   }
 
   // TODO: Unit test
-  performIpMismatchCheck() {
+  private performIpMismatchCheck() {
     const int = setInterval(() => {
       if (this.ip !== '' && this.webRTCIP !== '') {
         this.ip.localeCompare(this.webRTCIP) === 0 ?  this.IPsMatch = true : this.IPsMatch = false;
@@ -32,7 +32,7 @@ export class FingerprintsComponent implements OnInit {
   }
 
   // TODO: Unit test
-  performGeoMismatchCheck() {
+  private performGeoMismatchCheck() {
     const int = setInterval(() => {
       if (this.ipLocation != null && this.geoApiLocation != null) {
         if (this.ipLocation.lng > this.geoApiLocation.lng) {
@@ -52,19 +52,19 @@ export class FingerprintsComponent implements OnInit {
     }, 1000);
   }
 
-  updateIP(ip: string) {
+  private updateIP(ip: string) {
     this.ip = ip;
   }
 
-  updateWebRTCIP(ip: string) {
+  private updateWebRTCIP(ip: string) {
     this.webRTCIP = ip;
   }
 
-  updateIpLocation(location: google.maps.LatLngLiteral) {
+  private updateIpLocation(location: google.maps.LatLngLiteral) {
     this.ipLocation = location;
   }
 
-  updateGeoApiLocation(location: google.maps.LatLngLiteral) {
+  private updateGeoApiLocation(location: google.maps.LatLngLiteral) {
     this.geoApiLocation = location;
   }
 }

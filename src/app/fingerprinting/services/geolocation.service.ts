@@ -8,9 +8,7 @@ export class GeolocationService {
   getGeolication(): Observable<any> {
     return new Observable((observer: Observer<any>) => {
       if (window.navigator && window.navigator.geolocation) {
-        window.navigator.geolocation.getCurrentPosition((position) => {
-          observer.next(position);
-        },
+        window.navigator.geolocation.getCurrentPosition((position) => observer.next(position),
           (err) => {
             switch (err.code) {
               case 1:

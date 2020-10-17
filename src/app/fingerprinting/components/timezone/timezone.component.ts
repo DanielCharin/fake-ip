@@ -25,7 +25,7 @@ export class TimezoneComponent implements OnInit {
   }
 
   // TODO: Unit test
-  setTzValues(system: string, local: string): void {
+  private setTzValues(system: string, local: string): void {
     let systemOffsetInHours;
     let localOffsetInHours;
 
@@ -42,7 +42,7 @@ export class TimezoneComponent implements OnInit {
     this.performTimezoneMismatchCheck();
   }
 
-  performTimezoneMismatchCheck() {
+  private performTimezoneMismatchCheck() {
     this.timezonesMatch = this.systemTZ.localeCompare(this.localTZ) === 0;
   }
 }

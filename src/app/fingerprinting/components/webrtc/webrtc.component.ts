@@ -28,7 +28,7 @@ export class WebrtcComponent implements OnInit {
     });
   }
 
-  determineCountry(ip: string) {
+  private determineCountry(ip: string) {
     this.ipAddressService.getCountryByIP(ip).subscribe(data => {
       this.country = data.name;
       this.countryFlagSrc = findFlagUrlByIso3Code(data.country_3);

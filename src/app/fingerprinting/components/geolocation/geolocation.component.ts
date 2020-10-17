@@ -19,7 +19,6 @@ export class GeolocationComponent implements OnInit {
   marker = {} as Marker;
   lat: number;
   lon: number;
-  address: string;
 
   @Output()
   whenGeoApiLocation: EventEmitter<google.maps.LatLngLiteral> = new EventEmitter<google.maps.LatLngLiteral>();

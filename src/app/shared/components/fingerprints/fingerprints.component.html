@@ -4,6 +4,14 @@
     (whenIP)="updateIP($event)"
     (whenIpLocation)="updateIpLocation($event)">
     </app-main-ip>
+    <div class="info">
+      <div class="info-icon">
+        <img src="../../../../assets/info.png" height="35" width="35"/>
+      </div>
+      <div class="info-data">
+        <p>This is the IP address that websites see in most of the cases. It is obtained from your request headers.</p>
+      </div>
+    </div>
   </div>
   <div class="ip web-rtc">
     <div class="data">
@@ -24,9 +32,32 @@
         </ng-template>
       </div>
     </div>
+    <div class="info">
+      <div class="info-icon">
+        <img src="../../../../assets/info.png" height="35" width="35"/>
+      </div>
+      <div class="info-data">
+        <p>WebRTC is a widely used tool for peer-to-peer communications. In order to solve
+          the NAT issue in P2P connections, WebRTC uses STUN servers which help peers to connect.</p>
+
+        <p>However, this allows the second peer to see your public IP and hashes of your media devices. So just
+          by comparing your public IP from headers with the one from WebRTC, the website can detect a mismatch
+          and understand that the IP address is fake.</p>
+      </div>
+    </div>
   </div>
   <div class="ip timezone">
     <app-timezone></app-timezone>
+    <div class="info">
+      <div class="info-icon">
+        <img src="../../../../assets/info.png" height="35" width="35"/>
+      </div>
+      <div class="info-data">
+        <p>The Timezone mismatch is quite a trivial solution for fake IP detection. The website will get your local
+          timezone based on your public IP address and execute simple JavaScript code - the creation of Date instance
+          which will show your real system Timezone. Then the website just needs to perform a simple comparison.</p>
+      </div>
+    </div>
   </div>
   <div class="ip geo">
     <div class="data">
@@ -51,5 +82,16 @@
     <app-geolocation
       (whenGeoApiLocation)="updateGeoApiLocation($event)">
     </app-geolocation>
+    <div class="info">
+      <div class="info-icon">
+        <img src="../../../../assets/info.png" height="35" width="35"/>
+      </div>
+      <div class="info-data">
+        <p>Geolocation API allows the websites to see your location via Navigator.geolocation.
+          In case if your device has GPS, the location will be quite accurate. Alternatively, it will try to
+          find your location by analyzing Wifi hotspots nearby.
+          </p>
+      </div>
+    </div>
   </div>
 </div>

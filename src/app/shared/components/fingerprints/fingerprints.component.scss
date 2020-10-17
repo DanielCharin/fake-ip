@@ -33,6 +33,23 @@
         }
       }
     }
+
+    .info {
+      margin-top: 2em;
+      align-content: center;
+      align-items: center;
+      justify-items: center;
+      width: 100%;
+
+      .info-icon {
+        margin: 0.5em;
+        text-align: center;
+        vertical-align: center;
+      }
+
+      .info-data {
+      }
+    }
   }
 }
 
