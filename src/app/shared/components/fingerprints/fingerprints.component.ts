@@ -28,7 +28,7 @@ export class FingerprintsComponent implements OnInit {
         this.ip.localeCompare(this.webRTCIP) === 0 ?  this.IPsMatch = true : this.IPsMatch = false;
         clearInterval(int);
       }
-    }, 1000);
+    }, 500);
   }
 
   // TODO: Unit test
@@ -49,7 +49,7 @@ export class FingerprintsComponent implements OnInit {
 
         clearInterval(int);
       }
-    }, 1000);
+    }, 500);
   }
 
   private updateIP(ip: string) {
