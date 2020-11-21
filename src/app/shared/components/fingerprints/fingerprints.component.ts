@@ -52,19 +52,19 @@ export class FingerprintsComponent implements OnInit {
     }, 500);
   }
 
-  private updateIP(ip: string) {
+  public updateIP(ip: string) {
     this.ip = ip;
   }
 
-  private updateWebRTCIP(ip: string) {
+  public updateWebRTCIP(ip: string) {
     this.webRTCIP = ip;
   }
 
-  private updateIpLocation(location: google.maps.LatLngLiteral) {
+  public updateIpLocation(location: google.maps.LatLngLiteral) {
     this.ipLocation = location;
   }
 
-  private updateGeoApiLocation(location: google.maps.LatLngLiteral) {
+  public updateGeoApiLocation(location: google.maps.LatLngLiteral) {
     this.geoApiLocation = location;
   }
 }
