@@ -1,5 +1,5 @@
 # **fake-ip**
-![Alt](../fake-ip/src/assets/logo_x4.png "Title")
+![Alt](src/assets/logo_x4.png "Title")
 
 *See [fakeip.xyz][2] for demo*
 <br><br>
