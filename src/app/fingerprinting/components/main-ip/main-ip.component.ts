@@ -26,8 +26,8 @@ export class MainIpComponent implements OnInit {
       this.countryFlagSrc = findFlagUrlByIso3Code(this.ipData.country_code3);
       this.whenIP.emit(next.ip);
       this.whenIpLocation.emit({
-        lat: parseFloat(parseFloat(this.ipData.latitude).toFixed(2)),
-        lng: parseFloat(parseFloat(this.ipData.longitude).toFixed(2))});
+        lat: parseFloat(parseFloat(this.ipData.latitude).toFixed(3)),
+        lng: parseFloat(parseFloat(this.ipData.longitude).toFixed(3))});
     });
   }
 }

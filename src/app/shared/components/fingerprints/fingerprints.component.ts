@@ -36,15 +36,15 @@ export class FingerprintsComponent implements OnInit {
     const int = setInterval(() => {
       if (this.ipLocation != null && this.geoApiLocation != null) {
         if (this.ipLocation.lng > this.geoApiLocation.lng) {
-          this.ipLocation.lng - this.geoApiLocation.lng < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+          this.ipLocation.lng - this.geoApiLocation.lng < 1.0 ? this.locationsMatch = true : this.locationsMatch = false;
         } else {
-          this.geoApiLocation.lng - this.ipLocation.lng < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+          this.geoApiLocation.lng - this.ipLocation.lng < 1.0 ? this.locationsMatch = true : this.locationsMatch = false;
         }
 
         if (this.ipLocation.lat > this.geoApiLocation.lat) {
-          this.ipLocation.lat - this.geoApiLocation.lat < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+          this.ipLocation.lat - this.geoApiLocation.lat < 0.5 ? this.locationsMatch = true : this.locationsMatch = false;
         } else {
-          this.geoApiLocation.lat - this.ipLocation.lat < 0.2 ? this.locationsMatch = true : this.locationsMatch = false;
+          this.geoApiLocation.lat - this.ipLocation.lat < 0.5 ? this.locationsMatch = true : this.locationsMatch = false;
         }
 
         clearInterval(int);
@@ -52,19 +52,19 @@ export class FingerprintsComponent implements OnInit {
     }, 500);
   }
 
-  private updateIP(ip: string) {
+  public updateIP(ip: string) {
     this.ip = ip;
   }
 
-  private updateWebRTCIP(ip: string) {
+  public updateWebRTCIP(ip: string) {
     this.webRTCIP = ip;
   }
 
-  private updateIpLocation(location: google.maps.LatLngLiteral) {
+  public updateIpLocation(location: google.maps.LatLngLiteral) {
     this.ipLocation = location;
   }
 
-  private updateGeoApiLocation(location: google.maps.LatLngLiteral) {
+  public updateGeoApiLocation(location: google.maps.LatLngLiteral) {
     this.geoApiLocation = location;
   }
 }
